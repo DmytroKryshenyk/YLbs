@@ -19,7 +19,6 @@ p {
 
 .header {
   position: relative;
-  overflow: hidden;
   height: 56.25vw;
   max-height: 1080px;
   overflow: hidden;
@@ -31,3 +30,58 @@ p {
   width: 100%;
 }
 
+.header_content {
+  height: 100%;
+  padding: 70px;
+  background-image: linear-gradient(
+    to top,
+    rgba(0, 0, 0, 0.35),
+    rgba(0, 0, 0, 0.65)
+  );
+}
+
+.header_nav {
+  background: green;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  display: inline-block;
+  font: bold 40px 'Ubuntu', sans-serif;
+  color: #ffffff;
+  text-decoration: none;
+  background: orange;
+}
+
+.logo_icon {
+  vertical-align: middle;
+  margin-right: 50px;
+}
+
+.menu-toggle {
+  display: inline-block;
+  background: teal;
+}
+
+.menu-toggle_icon {
+  display: inline-block;
+}
+
+.header_description {
+  max-width: 1058px;
+  background: teal;
+  margin: auto;
+}
+
+.header_title {
+  font: bold 87px 'Ubuntu', sans-serif;
+  color: #ffffff;
+  margin: 0;
+}
+
+.header_subtitle {
+  font: bold 52px 'Ubuntu', sans-serif;
+  color: #ffffff;
+}

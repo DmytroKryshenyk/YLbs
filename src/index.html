@@ -15,16 +15,33 @@
 
   <body>
     <header class="header">
-      <video class="header_video video" autoplay muted loop playsinline>
+      <video class="header_video" autoplay muted loop playsinline>
         <source
-          class="video_source"
           type="video/mp4"
           src="videos/Aircraft loading with Load- Visualization in 3d.mp4"
         />
         Your browser does not support the video tag
       </video>
       <div class="header_content">
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto, provident?</p>
+        <nav class="header_nav">
+          <a href="#" class="header_logo logo" title="link to root page">
+            <svg width="68" height="60" class="logo_icon">
+              <use href="./images/sprite.svg#logo"></use>
+            </svg>
+            YotaLabs
+          </a>
+          <div class="header_menu menu-toggle">
+            <svg width="60" height="60" class="menu-toggle_icon">
+              <use href="./images/sprite.svg#burger-menu"></use>
+            </svg>
+          </div>
+        </nav>
+        <div class="header_description">
+          <h3 class="header_title">Lufthansa Systems</h3>
+          <p class="header_subtitle">
+            Cargo & Load management system used by 3500+ flights and 76 airlines
+          </p>
+        </div>
       </div>
     </header>
 
