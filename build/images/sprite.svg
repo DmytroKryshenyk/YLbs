@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><defs>
+        <linearGradient id="a" x1="0%" y1="0%" y2="100%">
+            <stop offset="0%" stop-color="#3649EA"/>
+            <stop offset="100%" stop-color="#6B26D7"/>
+        </linearGradient>
+    </defs><symbol id="burger-menu" viewBox="0 0 60 60">
+    <g fill="none" fill-rule="nonzero">
+        <rect width="58" height="58" x="1" y="1" stroke="#FFF" stroke-width="2" rx="4"/>
+        <g fill="#FFF" transform="translate(15 20)">
+            <rect width="23" height="2" rx="1"/>
+            <rect width="30" height="2" y="9" rx="1"/>
+            <rect width="16" height="2" y="18" rx="1"/>
+        </g>
+    </g>
+</symbol><symbol id="combined-shape-copy" viewBox="0 0 60 22">
+    <path fill="#B4B5BD" fill-rule="nonzero" d="M3.911 12.024l8.725 8.46L11.344 22 0 11 11.344 0l1.292 1.516-8.725 8.46H60v2.048H3.911z"/>
+</symbol><symbol id="combined-shape" viewBox="0 0 60 22">
+    
+    <path fill="url(#a)" fill-rule="nonzero" d="M131.024 37.089l8.46-8.725L141 29.656 130 41l-11-11.344 1.516-1.292 8.46 8.725V-19h2.048v56.089z" transform="rotate(-90 80 61)"/>
+</symbol><symbol id="logo" viewBox="0 0 72 63">
+    <g fill="none" fill-rule="nonzero" stroke="#FFF" stroke-linecap="round" stroke-linejoin="round" stroke-width="4">
+        <path d="M18.842 31.474l16.842 29.473H2zM18.842 31.474L2 2h33.684zM52.526 31.474L35.684 2h33.684zM52.526 31.474L35.684 60.947"/>
+    </g>
+</symbol></svg>

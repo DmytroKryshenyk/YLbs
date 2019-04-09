@@ -1,0 +1,33 @@
+/*
+   Import partials below
+*/
+@import './normalize';
+
+@import './variables';
+
+p {
+  color: $articles-text-color;
+  font-size: 14px;
+}
+
+.container {
+  max-width: 1920px;
+  min-width: 414px;
+  background: lightblue;
+  outline: 1px solid green;
+}
+
+.header {
+  position: relative;
+  overflow: hidden;
+  height: 56.25vw;
+  max-height: 1080px;
+  overflow: hidden;
+}
+
+.header_video {
+  position: absolute;
+  z-index: -1;
+  width: 100%;
+}
+
