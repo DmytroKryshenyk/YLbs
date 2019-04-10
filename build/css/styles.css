@@ -19,6 +19,13 @@
 html {
   line-height: 1.15;
   -webkit-text-size-adjust: 100%;
+  box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
 }
 
 /* Sections
@@ -354,17 +361,10 @@ p {
   font-size: 14px;
 }
 
-.container {
-  max-width: 1920px;
-  min-width: 414px;
-  background: lightblue;
-  outline: 1px solid green;
-}
-
 .header {
   position: relative;
-  height: 56.25vw;
   max-height: 1080px;
+  height: 56.25vw;
   overflow: hidden;
 }
 
@@ -376,15 +376,13 @@ p {
 
 .header_content {
   height: 100%;
-  padding: 70px;
   background-image: linear-gradient(to top, rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.65));
 }
 
 .header_nav {
-  background: green;
   display: flex;
   justify-content: space-between;
-  align-items: center;
+  padding: 70px 70px 0 70px;
 }
 
 .logo {
@@ -392,7 +390,6 @@ p {
   font: bold 40px 'Ubuntu', sans-serif;
   color: #ffffff;
   text-decoration: none;
-  background: orange;
 }
 
 .logo_icon {
@@ -400,25 +397,28 @@ p {
   margin-right: 50px;
 }
 
-.menu-toggle {
-  display: inline-block;
-  background: teal;
-}
-
-.menu-toggle_icon {
+.menu-toggle .menu-toggle_icon {
   display: inline-block;
 }
 
 .header_description {
-  max-width: 1058px;
-  background: teal;
+  width: 1058px;
+  text-align: center;
   margin: auto;
+  margin-top: 10vw;
 }
 
 .header_title {
   font: bold 87px 'Ubuntu', sans-serif;
   color: #ffffff;
   margin: 0;
+  vertical-align: middle;
+  margin-bottom: 120px;
+}
+
+.header_icon {
+  vertical-align: middle;
+  margin-right: 50px;
 }
 
 .header_subtitle {
