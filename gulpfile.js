@@ -55,15 +55,15 @@ function scripts() {
     .pipe(dest('build/js'));
 }
 
-function sprite() {
-  return src('src/images/icons/*.svg')
-    .pipe(svgstore({ inlineSvg: true }))
-    .pipe(rename('sprite.svg'))
-    .pipe(dest('build/images'));
-}
+// function sprite() {
+//   return src('src/images/icons/*.svg')
+//     .pipe(svgstore({ inlineSvg: true }))
+//     .pipe(rename('sprite.svg'))
+//     .pipe(dest('build/images'));
+// }
 
 function images() {
-  return src(['src/images/**/*.{png,jpg,jpeg,svg}', '!src/images/icons/**/*'])
+  return src(['src/images/**/*.{png,jpg,jpeg,svg}'])
     .pipe(
       imagemin([
         imagemin.jpegtran({ progressive: true }),
@@ -115,7 +115,7 @@ function prepare() {
 
 const build = series(
   clean,
-  parallel(sprite, images, fonts, videos, html, styles, scripts),
+  parallel(images, fonts, videos, html, styles, scripts),
 );
 
 const start = series(build, watcher, serve);
