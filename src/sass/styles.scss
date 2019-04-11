@@ -17,14 +17,31 @@
   }
 }
 
-.main {
+@mixin reset-paddings($type: 'all') {
+  @if ($type== 'all') {
+    padding: 0;
+  } @else if ($type== 'ver') {
+    padding-top: 0;
+    padding-bottom: 0;
+  } @else if ($type== 'hor') {
+    padding-left: 0;
+    padding-right: 0;
+  }
+}
+
+.container {
   min-width: 360px;
+  max-width: 1920px;
+  margin: 0 auto;
 }
 
 .header {
+  min-width: 360px;
   position: relative;
   height: 668px;
   overflow: hidden;
+  margin-bottom: 50px;
+  background-image: linear-gradient(to top, rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.65));
 }
 
 .header_video {
@@ -38,7 +55,6 @@
 
 .header_content {
   height: 100%;
-  background-image: linear-gradient(to top, rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.65));
 }
 
 .header_nav {
@@ -56,7 +72,7 @@
 }
 
 .logo_link {
-  font: bold 24px 'Ubuntu', sans-serif;
+  font: bold 24px $main-font;
   color: #ffffff;
   text-decoration: none;
 }
@@ -89,7 +105,7 @@
 }
 
 .header_title {
-  font: bold 30px/1 'Ubuntu', sans-serif;
+  font: bold 30px/1 $main-font;
   color: #ffffff;
   @include reset-margins;
   margin-bottom: 50px;
@@ -104,52 +120,55 @@
 }
 
 .header_subtitle {
-  font: bold 24px/1.5 'Ubuntu', sans-serif;
+  font: bold 24px/1.5 $main-font;
   color: #ffffff;
   @include reset-margins('ver');
 }
 
-@media (min-width: 960px) {
-  .header {
-    height: 1080px;
-  }
+.goals {
+  padding: 0 24px;
+  background: rgba(240, 128, 128, 0.2);
+}
 
-  .header_nav {
-    padding: 70px 70px 0 70px;
-  }
+.solution_wrapper {
+  margin-bottom: 40px;
+}
 
-  .logo_link {
-    font: bold 40px 'Ubuntu', sans-serif;
-  }
+.solution_title {
+  font: 500 20px $main-font;
+  color: $articles-title-color;
+  margin-top: 0;
+  position: relative;
+  margin-bottom: 48px;
 
-  .logo_icon {
-    margin-right: 50px;
-    width: 68px;
-    height: 60px;
-  }
-
-  .menu-toggle_icon {
-    width: 60px;
-    height: 60px;
-  }
-
-  .header_description {
-    max-width: 1058px;
-    margin: 234px auto 0 auto;
-  }
-
-  .header_title {
-    font: bold 87px 'Ubuntu', sans-serif;
-    margin-bottom: 120px;
-  }
-
-  .header_icon {
-    margin-right: 38px;
-    height: 102px;
-    width: 102px;
-  }
-
-  .header_subtitle {
-    font: bold 52px/1.23 'Ubuntu', sans-serif;
+  &::after {
+    content: '';
+    position: absolute;
+    left: -24px;
+    bottom: -24px;
+    height: 8px;
+    width: 260px;
+    background: linear-gradient(92deg, $gradient-color-first, $gradient-color-second);
   }
 }
+
+.solution_description {
+  font: 12px/1.5 $main-font;
+  @include reset-margins('ver');
+
+  &:not(:last-child) {
+    margin-bottom: 20px;
+  }
+} 
+
+// .solution_video-wrapper {
+//   overflow: hidden;
+//   position: relative;
+// }
+
+.solution_video {
+  width: 100%;
+}
+// =========================================================================
+// MEDIA
+@import './media.scss';

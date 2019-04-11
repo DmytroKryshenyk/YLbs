@@ -356,14 +356,19 @@ template {
   display: none;
 }
 
-.main {
+.container {
   min-width: 360px;
+  max-width: 1920px;
+  margin: 0 auto;
 }
 
 .header {
+  min-width: 360px;
   position: relative;
   height: 668px;
   overflow: hidden;
+  margin-bottom: 50px;
+  background-image: linear-gradient(to top, rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.65));
 }
 
 .header_video {
@@ -378,7 +383,6 @@ template {
 
 .header_content {
   height: 100%;
-  background-image: linear-gradient(to top, rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.65));
 }
 
 .header_nav {
@@ -397,7 +401,7 @@ template {
 }
 
 .logo_link {
-  font: bold 24px 'Ubuntu', sans-serif;
+  font: bold 24px "Ubuntu", sans-serif;
   color: #ffffff;
   text-decoration: none;
 }
@@ -430,7 +434,7 @@ template {
 }
 
 .header_title {
-  font: bold 30px/1 'Ubuntu', sans-serif;
+  font: bold 30px/1 "Ubuntu", sans-serif;
   color: #ffffff;
   margin: 0;
   margin-bottom: 50px;
@@ -445,15 +449,57 @@ template {
 }
 
 .header_subtitle {
-  font: bold 24px/1.5 'Ubuntu', sans-serif;
+  font: bold 24px/1.5 "Ubuntu", sans-serif;
   color: #ffffff;
   margin-top: 0;
   margin-bottom: 0;
 }
 
+.goals {
+  padding: 0 24px;
+  background: rgba(240, 128, 128, 0.2);
+}
+
+.solution_wrapper {
+  margin-bottom: 40px;
+}
+
+.solution_title {
+  font: 500 20px "Ubuntu", sans-serif;
+  color: #1e1f24;
+  margin-top: 0;
+  position: relative;
+  margin-bottom: 48px;
+}
+
+.solution_title::after {
+  content: '';
+  position: absolute;
+  left: -24px;
+  bottom: -24px;
+  height: 8px;
+  width: 260px;
+  background: linear-gradient(92deg, #3649ea, #6b26d7);
+}
+
+.solution_description {
+  font: 12px/1.5 "Ubuntu", sans-serif;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.solution_description:not(:last-child) {
+  margin-bottom: 20px;
+}
+
+.solution_video {
+  width: 100%;
+}
+
 @media (min-width: 960px) {
   .header {
     height: 1080px;
+    margin-bottom: 125px;
   }
 
   .header_nav {
@@ -461,7 +507,7 @@ template {
   }
 
   .logo_link {
-    font: bold 40px 'Ubuntu', sans-serif;
+    font: bold 40px "Ubuntu", sans-serif;
   }
 
   .logo_icon {
@@ -481,7 +527,7 @@ template {
   }
 
   .header_title {
-    font: bold 87px 'Ubuntu', sans-serif;
+    font: bold 87px "Ubuntu", sans-serif;
     margin-bottom: 120px;
   }
 
@@ -492,6 +538,36 @@ template {
   }
 
   .header_subtitle {
-    font: bold 52px/1.23 'Ubuntu', sans-serif;
+    font: bold 52px/1.23 "Ubuntu", sans-serif;
+  }
+
+  .goals {
+    padding: 0 17%;
+  }
+
+  .solution {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+  }
+
+  .solution_wrapper {
+    margin-bottom: 0;
+    flex-basis: 44%;
+  }
+
+  .solution_video {
+    flex-basis: 56%;
+    width: 56%;
+  }
+
+  .solution_title {
+    font: 500 36px "Ubuntu", sans-serif;
+  }
+}
+
+@media (min-width: 1920px) {
+  .goals {
+    padding: 0 326px;
   }
 }
