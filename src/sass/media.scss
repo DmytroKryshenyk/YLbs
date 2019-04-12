@@ -44,12 +44,11 @@
     font: bold 52px/1.23 $main-font;
   }
 
-  // GOALS
-  
-
+  // GOALS SOLUTION
   .goals_solutution {
     margin-bottom: 200px;
-    padding: 0 17%;
+    width: 66.146%;
+    max-width: 1270px;
   }
 
   .solution {
@@ -88,9 +87,12 @@
     padding-top: 140px; // Don’t change to top property! Зроблено за допомогою padding-top із-за того, що якщо бокового тексту стане мало і зробити це з допомогою top, то тоді текст вилізе на нижні блоки
   }
 
-  .opinion {
+  // GOALS OPINION
+  .goals_opinion {
     @include reset-paddings('all');
     width: 66.146%;
+    max-width: 1270px;
+    order: 0;
 
     &::after {
       margin-top: 20%;
@@ -108,10 +110,16 @@
     letter-spacing: 0.9px;
     margin: 0 auto;
   }
-}
 
-@media (min-width: 1920px) {
-  .goals_solutution {
-    padding: 0 326px;
+  // GOALS EXAMPLES
+  .goals_examples {
+    width: 66.146%;
+    max-width: 1270px;
+    @include reset-paddings('all');
   }
+
+  .examples_title {
+    order: 0;
+  }
+
 }

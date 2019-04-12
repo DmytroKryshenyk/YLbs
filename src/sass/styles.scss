@@ -144,10 +144,13 @@
 }
 
 // GOALS
+
 .goals {
-  // background: rgba(240, 238, 128, 0.377);
+  display: flex;
+  flex-direction: column;
 }
 
+// GOALS SOLUTION
 .goals_solutution {
   margin: auto;
   margin-bottom: 50px;
@@ -191,8 +194,10 @@
   width: 100%;
 }
 
+// GOALS OPINION
 .goals_opinion {
   margin: 0 auto;
+  order: 1;
 }
 
 .opinion {
@@ -226,6 +231,56 @@
   color: $text-white-color;
   padding-bottom: 50px;
 }
+
+// GOALS EXAMPLES
+.goals_examples {
+  margin-bottom: 50px;
+  padding: 0 24px;
+}
+
+.examples_slider {
+  width: 100%; // Don’t delete, created for Slick carousel
+  background: rgba(255, 165, 0, 0.2);
+  position: relative;
+
+  .slick-arrow {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+  }
+}
+
+.examples_item { 
+  display: flex !important; //!important this is the only way to make flex
+  flex-direction: column;
+  background: rgba(23, 255, 23, 0.137);
+}
+
+.examples_image-wrapper {
+  margin-bottom: 25px;
+}
+
+.examples_image {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.examples_title {
+  @include reset-margins('ver');
+  margin-bottom: 15px;
+  font: 500 20px/1.5 $main-font;
+  color: $articles-title-color;
+  order: -2;
+}
+
+.examples_description {
+  @include reset-margins('ver');
+  font: 12px/1.5 $main-font;
+  color: $articles-text-color;
+}
+
 // =========================================================================
 // MEDIA
 @import './media.scss';

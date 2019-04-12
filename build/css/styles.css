@@ -456,6 +456,11 @@ template {
   margin-bottom: 0;
 }
 
+.goals {
+  display: flex;
+  flex-direction: column;
+}
+
 .goals_solutution {
   margin: auto;
   margin-bottom: 50px;
@@ -502,6 +507,7 @@ template {
 
 .goals_opinion {
   margin: 0 auto;
+  order: 1;
 }
 
 .opinion {
@@ -534,6 +540,56 @@ template {
   text-align: center;
   color: #ffffff;
   padding-bottom: 50px;
+}
+
+.goals_examples {
+  margin-bottom: 50px;
+  padding: 0 24px;
+}
+
+.examples_slider {
+  width: 100%;
+  background: rgba(255, 165, 0, 0.2);
+  position: relative;
+}
+
+.examples_slider .slick-arrow {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
+}
+
+.examples_item {
+  display: flex !important;
+  flex-direction: column;
+  background: rgba(23, 255, 23, 0.137);
+}
+
+.examples_image-wrapper {
+  margin-bottom: 25px;
+}
+
+.examples_image {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.examples_title {
+  margin-top: 0;
+  margin-bottom: 0;
+  margin-bottom: 15px;
+  font: 500 20px/1.5 "Ubuntu", sans-serif;
+  color: #1e1f24;
+  order: -2;
+}
+
+.examples_description {
+  margin-top: 0;
+  margin-bottom: 0;
+  font: 12px/1.5 "Ubuntu", sans-serif;
+  color: #52535b;
 }
 
 @media (min-width: 960px) {
@@ -583,7 +639,8 @@ template {
 
   .goals_solutution {
     margin-bottom: 200px;
-    padding: 0 17%;
+    width: 66.146%;
+    max-width: 1270px;
   }
 
   .solution {
@@ -622,12 +679,14 @@ template {
     padding-top: 140px;
   }
 
-  .opinion {
+  .goals_opinion {
     padding: 0;
     width: 66.146%;
+    max-width: 1270px;
+    order: 0;
   }
 
-  .opinion::after {
+  .goals_opinion::after {
     margin-top: 20%;
   }
 
@@ -642,10 +701,14 @@ template {
     letter-spacing: 0.9px;
     margin: 0 auto;
   }
-}
 
-@media (min-width: 1920px) {
-  .goals_solutution {
-    padding: 0 326px;
+  .goals_examples {
+    width: 66.146%;
+    max-width: 1270px;
+    padding: 0;
+  }
+
+  .examples_title {
+    order: 0;
   }
 }

@@ -84,6 +84,10 @@ function videos() {
   return src('src/videos/**/*').pipe(dest('build/videos'))
 }
 
+function slick() {
+  return src('src/slick/**/*').pipe(dest('build/slick'))
+}
+
 function watcher(done) {
   watch('src/**/*.html').on('change', series(html, server.reload));
   watch('src/sass/**/*.scss').on('change', series(styles, server.reload));
@@ -115,7 +119,7 @@ function prepare() {
 
 const build = series(
   clean,
-  parallel(images, fonts, videos, html, styles, scripts),
+  parallel(images, fonts, slick, videos, html, styles, scripts),
 );
 
 const start = series(build, watcher, serve);

@@ -6,8 +6,7 @@
       "ignore": ["stylelint-commands", "after-comment"]
     }],
     "declaration-colon-space-after": "always",
-    "declaration-no-important": true,
-    "indentation": [2, {
+    "indentation": [2, { 
       "ignore": ["inside-parens"]
     }],
     "max-empty-lines": 2,
