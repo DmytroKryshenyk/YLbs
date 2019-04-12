@@ -29,12 +29,29 @@
   }
 }
 
+@mixin flex-center($type: 'all') {
+  display: flex;
+
+  @if ($type == 'all') {
+    justify-content: center;
+    align-items: center;
+  } @else if ($type == 'hor') {
+    justify-content: center;
+  } @else if ($type == 'ver') {
+    align-items: center;
+  } @else {
+    justify-content: center;
+    align-items: center;
+  }
+}
+
 .container {
   min-width: 360px;
   max-width: 1920px;
   margin: 0 auto;
 }
 
+// HEADER
 .header {
   min-width: 360px;
   position: relative;
@@ -62,6 +79,7 @@
   justify-content: space-between;
   padding: 24px 24px 0 24px;
   background: rgba(0, 128, 128, 0.4);
+  margin-bottom: 170px;
 }
 
 .logo {
@@ -73,7 +91,7 @@
 
 .logo_link {
   font: bold 24px $main-font;
-  color: #ffffff;
+  color: $text-white-color;
   text-decoration: none;
 }
 
@@ -99,16 +117,9 @@
 
 .header_description {
   text-align: center;
-  margin: 170px auto 0 auto;
+  margin: auto;
   padding: 0 5px;
   background: rgba(173, 255, 47, 0.3);
-}
-
-.header_title {
-  font: bold 30px/1 $main-font;
-  color: #ffffff;
-  @include reset-margins;
-  margin-bottom: 50px;
 }
 
 .header_icon {
@@ -119,15 +130,28 @@
   width: 30px;
 }
 
+.header_title {
+  font: bold 30px/1 $main-font;
+  color: $text-white-color;
+  @include reset-margins;
+  margin-bottom: 50px;
+}
+
 .header_subtitle {
   font: bold 24px/1.5 $main-font;
-  color: #ffffff;
+  color: $text-white-color;
   @include reset-margins('ver');
 }
 
+// GOALS
 .goals {
+  // background: rgba(240, 238, 128, 0.377);
+}
+
+.goals_solutution {
+  margin: auto;
+  margin-bottom: 50px;
   padding: 0 24px;
-  background: rgba(240, 128, 128, 0.2);
 }
 
 .solution_wrapper {
@@ -138,36 +162,69 @@
   font: 500 20px $main-font;
   color: $articles-title-color;
   margin-top: 0;
-  position: relative;
   margin-bottom: 48px;
+  position: relative;
 
   &::after {
     content: '';
-    position: absolute;
-    left: -24px;
-    bottom: -24px;
     height: 8px;
     width: 260px;
     background: linear-gradient(92deg, $gradient-color-first, $gradient-color-second);
+    position: absolute;
+    top: 39px;
+    left: -24px;
   }
 }
 
 .solution_description {
   font: 12px/1.5 $main-font;
+  letter-spacing: 0.9px;
+  color: $articles-text-color;
   @include reset-margins('ver');
 
   &:not(:last-child) {
     margin-bottom: 20px;
   }
-} 
-
-// .solution_video-wrapper {
-//   overflow: hidden;
-//   position: relative;
-// }
+}
 
 .solution_video {
   width: 100%;
+}
+
+.goals_opinion {
+  margin: 0 auto;
+}
+
+.opinion {
+  padding: 0 24px;
+  position: relative;
+
+  // Робим здвинутий фон з допомогою after, а не двигаєм внутрішні елементи. Таким способом ми не маєм давати position: absolute внутрішнім елементам, тим самим забезпечуючи відсутність схлопування контенера і не даємо наїжати елементам на сусідні блоки. Також, бо цей фон не залежить від розмірів елементів всередині.
+  &::after {
+    content: '';
+    z-index: -1;
+    position: absolute;
+    margin-top: 25%;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-image: linear-gradient(147deg, $gradient-color-first, $gradient-color-second);
+  }
+}
+
+.opinion_video {
+  margin: 0 auto 30px auto;
+  display: block;
+  width: 100%; //don’t del this property because video get out of the block
+}
+
+.opinion_description {
+  @include reset-margins(ver);
+  font: 300 14px/1.29 $main-font;
+  text-align: center;
+  color: $text-white-color;
+  padding-bottom: 50px;
 }
 // =========================================================================
 // MEDIA

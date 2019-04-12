@@ -390,6 +390,7 @@ template {
   justify-content: space-between;
   padding: 24px 24px 0 24px;
   background: rgba(0, 128, 128, 0.4);
+  margin-bottom: 170px;
 }
 
 .logo {
@@ -428,16 +429,9 @@ template {
 
 .header_description {
   text-align: center;
-  margin: 170px auto 0 auto;
+  margin: auto;
   padding: 0 5px;
   background: rgba(173, 255, 47, 0.3);
-}
-
-.header_title {
-  font: bold 30px/1 "Ubuntu", sans-serif;
-  color: #ffffff;
-  margin: 0;
-  margin-bottom: 50px;
 }
 
 .header_icon {
@@ -448,6 +442,13 @@ template {
   width: 30px;
 }
 
+.header_title {
+  font: bold 30px/1 "Ubuntu", sans-serif;
+  color: #ffffff;
+  margin: 0;
+  margin-bottom: 50px;
+}
+
 .header_subtitle {
   font: bold 24px/1.5 "Ubuntu", sans-serif;
   color: #ffffff;
@@ -455,9 +456,10 @@ template {
   margin-bottom: 0;
 }
 
-.goals {
+.goals_solutution {
+  margin: auto;
+  margin-bottom: 50px;
   padding: 0 24px;
-  background: rgba(240, 128, 128, 0.2);
 }
 
 .solution_wrapper {
@@ -468,22 +470,24 @@ template {
   font: 500 20px "Ubuntu", sans-serif;
   color: #1e1f24;
   margin-top: 0;
-  position: relative;
   margin-bottom: 48px;
+  position: relative;
 }
 
 .solution_title::after {
   content: '';
-  position: absolute;
-  left: -24px;
-  bottom: -24px;
   height: 8px;
   width: 260px;
   background: linear-gradient(92deg, #3649ea, #6b26d7);
+  position: absolute;
+  top: 39px;
+  left: -24px;
 }
 
 .solution_description {
   font: 12px/1.5 "Ubuntu", sans-serif;
+  letter-spacing: 0.9px;
+  color: #52535b;
   margin-top: 0;
   margin-bottom: 0;
 }
@@ -494,6 +498,42 @@ template {
 
 .solution_video {
   width: 100%;
+}
+
+.goals_opinion {
+  margin: 0 auto;
+}
+
+.opinion {
+  padding: 0 24px;
+  position: relative;
+}
+
+.opinion::after {
+  content: '';
+  z-index: -1;
+  position: absolute;
+  margin-top: 25%;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-image: linear-gradient(147deg, #3649ea, #6b26d7);
+}
+
+.opinion_video {
+  margin: 0 auto 30px auto;
+  display: block;
+  width: 100%;
+}
+
+.opinion_description {
+  margin-top: 0;
+  margin-bottom: 0;
+  font: 300 14px/1.29 "Ubuntu", sans-serif;
+  text-align: center;
+  color: #ffffff;
+  padding-bottom: 50px;
 }
 
 @media (min-width: 960px) {
@@ -526,48 +566,86 @@ template {
     margin: 234px auto 0 auto;
   }
 
-  .header_title {
-    font: bold 87px "Ubuntu", sans-serif;
-    margin-bottom: 120px;
-  }
-
   .header_icon {
     margin-right: 38px;
     height: 102px;
     width: 102px;
   }
 
+  .header_title {
+    font: bold 87px "Ubuntu", sans-serif;
+    margin-bottom: 120px;
+  }
+
   .header_subtitle {
     font: bold 52px/1.23 "Ubuntu", sans-serif;
   }
 
-  .goals {
+  .goals_solutution {
+    margin-bottom: 200px;
     padding: 0 17%;
   }
 
   .solution {
     display: flex;
     flex-wrap: wrap;
+    justify-content: space-between;
     align-items: flex-start;
   }
 
   .solution_wrapper {
     margin-bottom: 0;
-    flex-basis: 44%;
-  }
-
-  .solution_video {
-    flex-basis: 56%;
-    width: 56%;
+    flex-basis: 43.3%;
   }
 
   .solution_title {
-    font: 500 36px "Ubuntu", sans-serif;
+    font: 500 34px "Ubuntu", sans-serif;
+    margin-bottom: 104px;
+  }
+
+  .solution_title::after {
+    width: 49vw;
+    top: 78px;
+    left: auto;
+    right: -25px;
+  }
+
+  .solution_description {
+    font: 20px/1.6 "Ubuntu", sans-serif;
+  }
+
+  .solution_video {
+    flex-basis: 55.24%;
+    width: 55%;
+    position: relative;
+    right: -165px;
+    padding-top: 140px;
+  }
+
+  .opinion {
+    padding: 0;
+    width: 66.146%;
+  }
+
+  .opinion::after {
+    margin-top: 20%;
+  }
+
+  .opinion_video {
+    width: 70.866%;
+    margin: 0 auto 50px auto;
+  }
+
+  .opinion_description {
+    font: 300 20px/1.6 "Ubuntu", sans-serif;
+    width: 55.118%;
+    letter-spacing: 0.9px;
+    margin: 0 auto;
   }
 }
 
 @media (min-width: 1920px) {
-  .goals {
+  .goals_solutution {
     padding: 0 326px;
   }
 }
