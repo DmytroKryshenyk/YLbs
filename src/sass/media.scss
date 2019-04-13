@@ -1,4 +1,8 @@
 @media (min-width: 960px) {
+  .content_container {
+    width: 66.146%;
+  }
+
   // HEADER
   .header {
     height: 1080px;
@@ -46,9 +50,9 @@
 
   // GOALS SOLUTION
   .goals_solutution {
+    @include container-paddings-desktop;
+    @include reset-paddings('hor');
     margin-bottom: 200px;
-    width: 66.146%;
-    max-width: 1270px;
   }
 
   .solution {
@@ -82,20 +86,27 @@
   .solution_video {
     flex-basis: 55.24%;
     width: 55%;
-    position: relative;
-    right: -165px;
+    transform: translateX(165px);
     padding-top: 140px; // Don’t change to top property! Зроблено за допомогою padding-top із-за того, що якщо бокового тексту стане мало і зробити це з допомогою top, то тоді текст вилізе на нижні блоки
   }
 
   // GOALS OPINION
   .goals_opinion {
-    @include reset-paddings('all');
-    width: 66.146%;
-    max-width: 1270px;
+    @include container-paddings-desktop;
+    @include reset-paddings('hor');
+    margin-bottom: 184px;
     order: 0;
 
     &::after {
       margin-top: 20%;
+    }
+  }
+
+  .opinion {
+    padding-bottom: 50px;
+
+    &::after {
+      background-image: linear-gradient(147deg, $gradient-color-first, $gradient-color-second);
     }
   }
 
@@ -113,13 +124,127 @@
 
   // GOALS EXAMPLES
   .goals_examples {
-    width: 66.146%;
-    max-width: 1270px;
-    @include reset-paddings('all');
+    @include container-paddings-desktop;
+    @include reset-paddings('hor');
+    margin-bottom: 153px;
+  }
+
+  .examples_slider {
+    .slick-arrow {
+      width: 60px;
+      height: 22px;
+    }
+
+    .slick-prev {
+      background-image: url('../images/icons/desktop-arrow-prev.svg');
+      left: 0;
+    }
+
+    .slick-next {
+      background-image: url('../images/icons/desktop-arrow-next.svg');
+      left: 100px;
+    }
+  }
+
+  .examples_item {
+    display: block !important;
+    overflow: hidden;
+  }
+
+  .examples_image {
+    width: 46.69%;
+    float: left;
+    margin-right: 9.76%;
+    margin-bottom: 5px;
   }
 
   .examples_title {
     order: 0;
+    margin-bottom: 32px;
+    font: 500 36px/1.28 $main-font;
+    letter-spacing: 3px;
   }
 
+  .examples_description {
+    font: 20px/1.6 $main-font;
+    letter-spacing: 0.9px;
+  }
+
+  .examples_pagination {
+    right: 0;
+  }
+
+  .examples_line {
+    width: 160px;
+    background: linear-gradient(to right, $gradient-color-first, $gradient-color-second);
+  }
+
+  .contacts {
+    padding: 100px 0;
+    background: linear-gradient(147deg, $gradient-color-first, $gradient-color-second);
+  }
+
+  .contacts_content {
+    @include container-paddings-desktop;
+    @include reset-paddings('hor');
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .suggestion_title {
+    font: 500 52px/1.23 $main-font;
+    margin-bottom: 32px;
+  }
+
+  .suggestion_promise {
+    font: 300 24px $main-font;
+    margin-bottom: 0;
+  }
+
+  .contacts_link {
+    font: 500 28px $main-font;
+    margin-bottom: 0;
+    right: 0;
+
+    &::after {
+      width: 150px;
+      height: 4px;
+      left: -50%;
+      bottom: -12px;
+    }
+  }
+
+  .projects_list {
+    flex-direction: row;
+  }
+
+  .projects_item {
+    flex: 1 0 auto;
+
+    &:nth-child(even) .projects_description {
+      text-align: left;
+    }
+  }
+
+  .projects_link {
+    height: 36.09375vw;
+    max-height: 693px;
+  }
+
+  .projects_description {
+    justify-content: flex-end;
+    text-align: right;
+    padding-bottom: 100px;
+  }
+
+  .projects_pointers {
+    font: 300 24px $main-font;
+    margin-bottom: 16px;
+  }
+
+  .projects_names {
+    font: bold 56px $main-font;
+  }
 }

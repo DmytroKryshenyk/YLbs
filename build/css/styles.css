@@ -2,10 +2,6 @@
    Import partials below
 */
 
-/*
-   Import partials below
-*/
-
 /*! normalize.css v8.0.0 | MIT License | github.com/necolas/normalize.css */
 
 /* Document
@@ -356,10 +352,14 @@ template {
   display: none;
 }
 
-.container {
+.seo-visibility-hidden {
+  display: none;
+}
+
+.content-container {
+  margin: auto;
+  max-width: 1270px;
   min-width: 360px;
-  max-width: 1920px;
-  margin: 0 auto;
 }
 
 .header {
@@ -383,19 +383,20 @@ template {
 
 .header_content {
   height: 100%;
+  min-width: 360px;
+  max-width: 1920px;
+  margin: 0 auto;
 }
 
 .header_nav {
   display: flex;
   justify-content: space-between;
   padding: 24px 24px 0 24px;
-  background: rgba(0, 128, 128, 0.4);
   margin-bottom: 170px;
 }
 
 .logo {
   display: inline-block;
-  background: rgba(255, 0, 0, 0.4);
   vertical-align: middle;
   margin-top: 0;
   margin-bottom: 0;
@@ -417,7 +418,6 @@ template {
 
 .menu-toggle {
   display: inline-block;
-  background: rgba(255, 165, 0, 0.4);
   vertical-align: middle;
 }
 
@@ -431,7 +431,6 @@ template {
   text-align: center;
   margin: auto;
   padding: 0 5px;
-  background: rgba(173, 255, 47, 0.3);
 }
 
 .header_icon {
@@ -462,9 +461,9 @@ template {
 }
 
 .goals_solutution {
-  margin: auto;
-  margin-bottom: 50px;
   padding: 0 24px;
+  margin: 0 auto;
+  margin-bottom: 50px;
 }
 
 .solution_wrapper {
@@ -506,12 +505,13 @@ template {
 }
 
 .goals_opinion {
+  padding: 0 24px;
   margin: 0 auto;
   order: 1;
 }
 
 .opinion {
-  padding: 0 24px;
+  padding-bottom: 120px;
   position: relative;
 }
 
@@ -524,7 +524,7 @@ template {
   right: 0;
   bottom: 0;
   left: 0;
-  background-image: linear-gradient(147deg, #3649ea, #6b26d7);
+  background-image: linear-gradient(to bottom, #3649ea, #6a26d7);
 }
 
 .opinion_video {
@@ -539,12 +539,11 @@ template {
   font: 300 14px/1.29 "Ubuntu", sans-serif;
   text-align: center;
   color: #ffffff;
-  padding-bottom: 50px;
 }
 
 .goals_examples {
-  margin-bottom: 50px;
   padding: 0 24px;
+  margin-bottom: 50px;
   width: 100%;
 }
 
@@ -554,7 +553,6 @@ template {
 
 .examples_slider {
   width: 100%;
-  background: rgba(255, 165, 0, 0.2);
   padding-bottom: 50px;
   position: relative;
 }
@@ -591,7 +589,6 @@ template {
 .examples_item {
   display: flex !important;
   flex-direction: column;
-  background: rgba(23, 255, 23, 0.137);
 }
 
 .examples_image-wrapper {
@@ -602,6 +599,7 @@ template {
   display: block;
   width: 100%;
   height: auto;
+  margin-bottom: 25px;
 }
 
 .examples_title {
@@ -648,7 +646,128 @@ template {
   color: #b4b5bd;
 }
 
+.footer {
+  -webkit-transform: translateY(-1px);
+  transform: translateY(-1px);
+  min-width: 360px;
+}
+
+.contacts {
+  background: linear-gradient(to bottom, #6a26d7, #6b26d7);
+}
+
+.contacts_content {
+  padding: 0 24px;
+  padding-bottom: 50px;
+  text-align: center;
+}
+
+.contacts_suggestion {
+  text-align: left;
+}
+
+.suggestion_title {
+  margin-top: 0;
+  margin-bottom: 0;
+  font: 500 24px/1.33 "Ubuntu", sans-serif;
+  color: #ffffff;
+  margin-bottom: 24px;
+}
+
+.suggestion_promise {
+  margin-top: 0;
+  margin-bottom: 0;
+  font: 300 16px "Ubuntu", sans-serif;
+  color: #ffffff;
+  margin-bottom: 40px;
+}
+
+.contacts_link {
+  font: 500 14px "Ubuntu", sans-serif;
+  color: #ffffff;
+  display: inline-block;
+  text-decoration: none;
+  position: relative;
+  right: -30px;
+  cursor: pointer;
+}
+
+.contacts_link::after {
+  content: '';
+  display: block;
+  width: 90px;
+  height: 2px;
+  position: absolute;
+  background: #ffffff;
+  left: -43px;
+  bottom: -12px;
+}
+
+.projects_list {
+  margin-top: 0;
+  margin-bottom: 0;
+  padding-left: 0;
+  padding-right: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.projects_item {
+  list-style-type: none;
+}
+
+.projects_item:nth-child(even) .projects_description {
+  text-align: right;
+}
+
+.projects_link {
+  display: block;
+  height: 44.44444444444444vw;
+  min-height: 160px;
+  position: relative;
+  text-decoration: none;
+}
+
+.projects_image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+  object-fit: cover;
+  z-index: -1;
+}
+
+.projects_description {
+  padding: 0 24px;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background: rgba(0, 0, 0, 0.6);
+}
+
+.projects_pointers {
+  margin-top: 0;
+  margin-bottom: 0;
+  font: 300 14px "Ubuntu", sans-serif;
+  color: #ffffff;
+  margin-bottom: 8px;
+}
+
+.projects_names {
+  margin-top: 0;
+  margin-bottom: 0;
+  font: bold 32px "Ubuntu", sans-serif;
+  color: #ffffff;
+}
+
 @media (min-width: 960px) {
+  .content_container {
+    width: 66.146%;
+  }
+
   .header {
     height: 1080px;
     margin-bottom: 125px;
@@ -694,9 +813,10 @@ template {
   }
 
   .goals_solutution {
-    margin-bottom: 200px;
     width: 66.146%;
-    max-width: 1270px;
+    padding-left: 0;
+    padding-right: 0;
+    margin-bottom: 200px;
   }
 
   .solution {
@@ -730,20 +850,29 @@ template {
   .solution_video {
     flex-basis: 55.24%;
     width: 55%;
-    position: relative;
-    right: -165px;
+    -webkit-transform: translateX(165px);
+    transform: translateX(165px);
     padding-top: 140px;
   }
 
   .goals_opinion {
-    padding: 0;
     width: 66.146%;
-    max-width: 1270px;
+    padding-left: 0;
+    padding-right: 0;
+    margin-bottom: 184px;
     order: 0;
   }
 
   .goals_opinion::after {
     margin-top: 20%;
+  }
+
+  .opinion {
+    padding-bottom: 50px;
+  }
+
+  .opinion::after {
+    background-image: linear-gradient(147deg, #3649ea, #6b26d7);
   }
 
   .opinion_video {
@@ -760,11 +889,126 @@ template {
 
   .goals_examples {
     width: 66.146%;
-    max-width: 1270px;
-    padding: 0;
+    padding-left: 0;
+    padding-right: 0;
+    margin-bottom: 153px;
+  }
+
+  .examples_slider .slick-arrow {
+    width: 60px;
+    height: 22px;
+  }
+
+  .examples_slider .slick-prev {
+    background-image: url("../images/icons/desktop-arrow-prev.svg");
+    left: 0;
+  }
+
+  .examples_slider .slick-next {
+    background-image: url("../images/icons/desktop-arrow-next.svg");
+    left: 100px;
+  }
+
+  .examples_item {
+    display: block !important;
+    overflow: hidden;
+  }
+
+  .examples_image {
+    width: 46.69%;
+    float: left;
+    margin-right: 9.76%;
+    margin-bottom: 5px;
   }
 
   .examples_title {
     order: 0;
+    margin-bottom: 32px;
+    font: 500 36px/1.28 "Ubuntu", sans-serif;
+    letter-spacing: 3px;
+  }
+
+  .examples_description {
+    font: 20px/1.6 "Ubuntu", sans-serif;
+    letter-spacing: 0.9px;
+  }
+
+  .examples_pagination {
+    right: 0;
+  }
+
+  .examples_line {
+    width: 160px;
+    background: linear-gradient(to right, #3649ea, #6b26d7);
+  }
+
+  .contacts {
+    padding: 100px 0;
+    background: linear-gradient(147deg, #3649ea, #6b26d7);
+  }
+
+  .contacts_content {
+    width: 66.146%;
+    padding-left: 0;
+    padding-right: 0;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .suggestion_title {
+    font: 500 52px/1.23 "Ubuntu", sans-serif;
+    margin-bottom: 32px;
+  }
+
+  .suggestion_promise {
+    font: 300 24px "Ubuntu", sans-serif;
+    margin-bottom: 0;
+  }
+
+  .contacts_link {
+    font: 500 28px "Ubuntu", sans-serif;
+    margin-bottom: 0;
+    right: 0;
+  }
+
+  .contacts_link::after {
+    width: 150px;
+    height: 4px;
+    left: -50%;
+    bottom: -12px;
+  }
+
+  .projects_list {
+    flex-direction: row;
+  }
+
+  .projects_item {
+    flex: 1 0 auto;
+  }
+
+  .projects_item:nth-child(even) .projects_description {
+    text-align: left;
+  }
+
+  .projects_link {
+    height: 36.09375vw;
+    max-height: 693px;
+  }
+
+  .projects_description {
+    justify-content: flex-end;
+    text-align: right;
+    padding-bottom: 100px;
+  }
+
+  .projects_pointers {
+    font: 300 24px "Ubuntu", sans-serif;
+    margin-bottom: 16px;
+  }
+
+  .projects_names {
+    font: bold 56px "Ubuntu", sans-serif;
   }
 }

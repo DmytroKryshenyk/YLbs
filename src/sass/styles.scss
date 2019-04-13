@@ -1,6 +1,3 @@
-/*
-   Import partials below
-*/
 @import './normalize';
 
 @import './variables';
@@ -31,7 +28,6 @@
 
 @mixin flex-center($type: 'all') {
   display: flex;
-
   @if ($type == 'all') {
     justify-content: center;
     align-items: center;
@@ -45,10 +41,22 @@
   }
 }
 
-.container {
+@mixin container-paddings-mobile {
+  padding: 0 24px;
+}
+
+@mixin container-paddings-desktop {
+  width: 66.146%;
+}
+
+.seo-visibility-hidden {
+  display: none;
+}
+
+.content-container {
+  margin: auto;
+  max-width: 1270px;
   min-width: 360px;
-  max-width: 1920px;
-  margin: 0 auto;
 }
 
 // HEADER
@@ -72,19 +80,20 @@
 
 .header_content {
   height: 100%;
+  min-width: 360px;
+  max-width: 1920px;
+  margin: 0 auto;
 }
 
 .header_nav {
   display: flex;
   justify-content: space-between;
   padding: 24px 24px 0 24px;
-  background: rgba(0, 128, 128, 0.4);
   margin-bottom: 170px;
 }
 
 .logo {
   display: inline-block; //for block separate use
-  background: rgba(255, 0, 0, 0.4);
   vertical-align: middle;
   @include reset-margins('ver');
 }
@@ -105,7 +114,6 @@
 
 .menu-toggle {
   display: inline-block; //for block separate use
-  background: rgba(255, 165, 0, 0.4);
   vertical-align: middle;
 }
 
@@ -119,7 +127,6 @@
   text-align: center;
   margin: auto;
   padding: 0 5px;
-  background: rgba(173, 255, 47, 0.3);
 }
 
 .header_icon {
@@ -152,9 +159,9 @@
 
 // GOALS SOLUTION
 .goals_solutution {
-  margin: auto;
+  @include container-paddings-mobile;
+  margin: 0 auto;
   margin-bottom: 50px;
-  padding: 0 24px;
 }
 
 .solution_wrapper {
@@ -196,12 +203,13 @@
 
 // GOALS OPINION
 .goals_opinion {
+  @include container-paddings-mobile;
   margin: 0 auto;
   order: 1;
 }
 
 .opinion {
-  padding: 0 24px;
+  padding-bottom: 120px;
   position: relative;
 
   // Робим здвинутий фон з допомогою after, а не двигаєм внутрішні елементи. Таким способом ми не маєм давати position: absolute внутрішнім елементам, тим самим забезпечуючи відсутність схлопування контенера і не даємо наїжати елементам на сусідні блоки. Також, бо цей фон не залежить від розмірів елементів всередині.
@@ -214,7 +222,7 @@
     right: 0;
     bottom: 0;
     left: 0;
-    background-image: linear-gradient(147deg, $gradient-color-first, $gradient-color-second);
+    background-image: linear-gradient(to bottom, $gradient-color-first, rgb(106, 38, 215));
   }
 }
 
@@ -229,25 +237,23 @@
   font: 300 14px/1.29 $main-font;
   text-align: center;
   color: $text-white-color;
-  padding-bottom: 50px;
 }
 
 // GOALS EXAMPLES
 .goals_examples {
+  @include container-paddings-mobile;
   margin-bottom: 50px;
-  padding: 0 24px;
   width: 100%;
 }
 
 .examples {
-  position: relative;
+  position: relative; //for slider paginations
 }
 
 .examples_slider {
-  width: 100%; // Don’t delete, created for Slick carousel
-  background: rgba(255, 165, 0, 0.2);
+  width: 100%; // Don’t delete, created for flexbox Slick carousel
   padding-bottom: 50px;
-  position: relative;
+  position: relative; //for slider arrows
 
   .slick-arrow {
     position: absolute;
@@ -282,7 +288,6 @@
 .examples_item {
   display: flex !important; //!important this is the only way to make flex
   flex-direction: column;
-  background: rgba(23, 255, 23, 0.137);
 }
 
 .examples_image-wrapper {
@@ -293,6 +298,7 @@
   display: block;
   width: 100%;
   height: auto;
+  margin-bottom: 25px;
 }
 
 .examples_title {
@@ -337,6 +343,114 @@
   color: #b4b5bd;
 }
 
-// =========================================================================
+.footer {
+  transform: translateY(-1px); //remove the white line between the the footer and upper block when we resizing
+  min-width: 360px;
+}
+
+.contacts {
+  background: linear-gradient(to bottom, rgb(106, 38, 215), $gradient-color-second);
+}
+
+.contacts_content {
+  @include container-paddings-mobile;
+  padding-bottom: 50px;
+  text-align: center;
+}
+
+.contacts_suggestion {
+  text-align: left;
+}
+
+.suggestion_title {
+  @include reset-margins('ver');
+  font: 500 24px/1.33 $main-font;
+  color: $text-white-color;
+  margin-bottom: 24px;
+}
+
+.suggestion_promise {
+  @include reset-margins('ver');
+  font: 300 16px $main-font;
+  color: $text-white-color;
+  margin-bottom: 40px;
+}
+
+.contacts_link {
+  font: 500 14px $main-font;
+  color: $text-white-color;
+  display: inline-block;
+  text-decoration: none;
+  position: relative;
+  right: -30px;
+  cursor: pointer;
+
+  &::after {
+    content: '';
+    display: block;
+    width: 90px;
+    height: 2px;
+    position: absolute;
+    background: #ffffff;
+    left: -43px;
+    bottom: -12px;
+  }
+}
+
+.projects_list {
+  @include reset-margins('ver');
+  @include reset-paddings('hor');
+  display: flex;
+  flex-direction: column;
+}
+
+.projects_item {
+  list-style-type: none;
+
+  &:nth-child(even) .projects_description {
+    text-align: right;
+  }
+}
+
+.projects_link {
+  display: block;
+  height: 44.44444444444444vw;
+  min-height: 160px;
+  position: relative;
+  text-decoration: none;
+}
+
+.projects_image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -1;
+}
+
+.projects_description {
+  @include container-paddings-mobile;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background: rgba(0, 0, 0, 0.6)
+}
+
+.projects_pointers {
+  @include reset-margins('ver');
+  font: 300 14px $main-font;
+  color: $text-white-color;
+  margin-bottom: 8px;
+}
+
+.projects_names {
+  @include reset-margins('ver');
+  font: bold 32px $main-font;
+  color: $text-white-color;
+}
+
 // MEDIA
 @import './media.scss';

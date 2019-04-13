@@ -13,4 +13,4 @@ $slickElement.on('init reInit afterChange', function(event, slick, currentSlide,
   $count.text('0' + slick.slideCount);
 });
 
-$('.examples_slider').slick({});
+$('.examples_slider').slick({}); 
