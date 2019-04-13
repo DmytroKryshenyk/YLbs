@@ -545,19 +545,47 @@ template {
 .goals_examples {
   margin-bottom: 50px;
   padding: 0 24px;
+  width: 100%;
+}
+
+.examples {
+  position: relative;
 }
 
 .examples_slider {
   width: 100%;
   background: rgba(255, 165, 0, 0.2);
+  padding-bottom: 50px;
   position: relative;
 }
 
 .examples_slider .slick-arrow {
   position: absolute;
-  top: 0;
-  left: 0;
   z-index: 1;
+  height: 24px;
+  width: 22px;
+  background: transparent;
+  border: none;
+  font-size: 0;
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+.examples_slider .slick-arrow:focus {
+  outline: none;
+  outline-offset: 0;
+}
+
+.examples_slider .slick-prev {
+  bottom: 0;
+  left: 24px;
+  background-image: url("../images/icons/mobile-arrow-prev.svg");
+}
+
+.examples_slider .slick-next {
+  bottom: 0;
+  left: 74px;
+  background-image: url("../images/icons/mobile-arrow-next.svg");
 }
 
 .examples_item {
@@ -590,6 +618,34 @@ template {
   margin-bottom: 0;
   font: 12px/1.5 "Ubuntu", sans-serif;
   color: #52535b;
+}
+
+.examples_pagins {
+  position: absolute;
+  bottom: 0;
+  right: 24px;
+}
+
+.examples_status {
+  color: #52535b;
+}
+
+.examples_numbers {
+  font: bold 16px "Ubuntu", sans-serif;
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.examples_line {
+  display: inline-block;
+  width: 130px;
+  vertical-align: middle;
+  height: 3px;
+  background: linear-gradient(to right, #23c265, #23747b);
+}
+
+.examples_count {
+  color: #b4b5bd;
 }
 
 @media (min-width: 960px) {

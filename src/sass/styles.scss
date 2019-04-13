@@ -236,22 +236,50 @@
 .goals_examples {
   margin-bottom: 50px;
   padding: 0 24px;
+  width: 100%;
+}
+
+.examples {
+  position: relative;
 }
 
 .examples_slider {
   width: 100%; // Don’t delete, created for Slick carousel
   background: rgba(255, 165, 0, 0.2);
+  padding-bottom: 50px;
   position: relative;
 
   .slick-arrow {
     position: absolute;
-    top: 0;
-    left: 0;
     z-index: 1;
+    height: 24px;
+    width: 22px;
+    background: transparent;
+    border: none;
+    font-size: 0;
+    background-repeat: no-repeat;
+    background-size: contain;
+
+    &:focus {
+      outline: none;
+      outline-offset: 0;
+    }
+  }
+
+  .slick-prev {
+    bottom: 0;
+    left: 24px;
+    background-image: url('../images/icons/mobile-arrow-prev.svg');
+  }
+
+  .slick-next {
+    bottom: 0;
+    left: 74px;
+    background-image: url('../images/icons/mobile-arrow-next.svg');
   }
 }
 
-.examples_item { 
+.examples_item {
   display: flex !important; //!important this is the only way to make flex
   flex-direction: column;
   background: rgba(23, 255, 23, 0.137);
@@ -279,6 +307,34 @@
   @include reset-margins('ver');
   font: 12px/1.5 $main-font;
   color: $articles-text-color;
+}
+
+.examples_pagins {
+  position: absolute;
+  bottom: 0;
+  right: 24px;
+}
+
+.examples_status {
+  color: $articles-text-color;
+}
+
+.examples_numbers {
+  font: bold 16px $main-font;
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.examples_line {
+  display: inline-block;
+  width: 130px;
+  vertical-align: middle;
+  height: 3px;
+  background: linear-gradient(to right, #23c265, #23747b);
+}
+
+.examples_count {
+  color: #b4b5bd;
 }
 
 // =========================================================================
