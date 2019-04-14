@@ -50,7 +50,7 @@
 
   // GOALS SOLUTION
   .goals_solutution {
-    @include container-paddings-desktop;
+    @include container-width-desktop;
     @include reset-paddings('hor');
     margin-bottom: 200px;
   }
@@ -86,13 +86,12 @@
   .solution_video {
     flex-basis: 55.24%;
     width: 55%;
-    transform: translateX(165px);
-    padding-top: 140px; // Don’t change to top property! Зроблено за допомогою padding-top із-за того, що якщо бокового тексту стане мало і зробити це з допомогою top, то тоді текст вилізе на нижні блоки
+    transform: translate(140px, 165px);
   }
 
   // GOALS OPINION
   .goals_opinion {
-    @include container-paddings-desktop;
+    @include container-width-desktop;
     @include reset-paddings('hor');
     margin-bottom: 184px;
     order: 0;
@@ -124,7 +123,7 @@
 
   // GOALS EXAMPLES
   .goals_examples {
-    @include container-paddings-desktop;
+    @include container-width-desktop;
     @include reset-paddings('hor');
     margin-bottom: 153px;
   }
@@ -147,7 +146,7 @@
   }
 
   .examples_item {
-    display: block !important;
+    display: block !important; //!important this is the only way to make flex slider block
     overflow: hidden;
   }
 
@@ -159,10 +158,10 @@
   }
 
   .examples_title {
-    order: 0;
     margin-bottom: 32px;
     font: 500 36px/1.28 $main-font;
     letter-spacing: 3px;
+    order: 0;
   }
 
   .examples_description {
@@ -185,7 +184,7 @@
   }
 
   .contacts_content {
-    @include container-paddings-desktop;
+    @include container-width-desktop;
     @include reset-paddings('hor');
     margin: 0 auto;
     display: flex;
@@ -205,7 +204,6 @@
 
   .contacts_link {
     font: 500 28px $main-font;
-    margin-bottom: 0;
     right: 0;
 
     &::after {
@@ -223,8 +221,13 @@
   .projects_item {
     flex: 1 0 auto;
 
+    &:nth-child(odd) .projects_description {
+      padding-right: 5.2vw;
+    }
+
     &:nth-child(even) .projects_description {
       text-align: left;
+      padding-left: 5.2vw;
     }
   }
 
@@ -234,6 +237,7 @@
   }
 
   .projects_description {
+    @include reset-paddings('hor');
     justify-content: flex-end;
     text-align: right;
     padding-bottom: 100px;

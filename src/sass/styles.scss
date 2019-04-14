@@ -45,7 +45,7 @@
   padding: 0 24px;
 }
 
-@mixin container-paddings-desktop {
+@mixin container-width-desktop {
   width: 66.146%;
 }
 
@@ -55,15 +55,15 @@
 
 .content-container {
   margin: auto;
-  max-width: 1270px;
+  max-width: 1270px; 
   min-width: 360px;
-}
-
-// HEADER
+} 
+ 
+// HEADER 
 .header {
-  min-width: 360px;
-  position: relative;
+  min-width: 360px; 
   height: 668px;
+  position: relative;
   overflow: hidden;
   margin-bottom: 50px;
   background-image: linear-gradient(to top, rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.65));
@@ -125,7 +125,7 @@
 
 .header_description {
   text-align: center;
-  margin: auto;
+  margin: 0 auto;
   padding: 0 5px;
 }
 
@@ -155,6 +155,7 @@
 .goals {
   display: flex;
   flex-direction: column;
+  // think about justify-content: center
 }
 
 // GOALS SOLUTION
@@ -212,7 +213,7 @@
   padding-bottom: 120px;
   position: relative;
 
-  // Робим здвинутий фон з допомогою after, а не двигаєм внутрішні елементи. Таким способом ми не маєм давати position: absolute внутрішнім елементам, тим самим забезпечуючи відсутність схлопування контенера і не даємо наїжати елементам на сусідні блоки. Також, бо цей фон не залежить від розмірів елементів всередині.
+  // Робим здвинутий фон з допомогою after, а не двигаєм внутрішні елементи. Таким способом ми не маєм давати position: absolute внутрішнім елементам, тим самим забезпечуючи відсутність схлопування контенера і не даємо наїжати внутрішнім елементам на сусідні блоки. Також, цей фон НЕ залежить від розмірів елементів всередині.
   &::after {
     content: '';
     z-index: -1;
@@ -229,7 +230,7 @@
 .opinion_video {
   margin: 0 auto 30px auto;
   display: block;
-  width: 100%; //don’t del this property because video get out of the block
+  width: 100%; //don’t del this property because in IE video can get out of the block
 }
 
 .opinion_description {
@@ -243,7 +244,7 @@
 .goals_examples {
   @include container-paddings-mobile;
   margin-bottom: 50px;
-  width: 100%;
+  width: 100%; //don’t del this property. It’s property for flexbox slick slider
 }
 
 .examples {
@@ -251,7 +252,7 @@
 }
 
 .examples_slider {
-  width: 100%; // Don’t delete, created for flexbox Slick carousel
+  width: 100%; // don’t del, created for flexbox Slick carousel
   padding-bottom: 50px;
   position: relative; //for slider arrows
 
@@ -286,7 +287,7 @@
 }
 
 .examples_item {
-  display: flex !important; //!important this is the only way to make flex
+  display: flex !important; //!important this is the only way to make flex slider item
   flex-direction: column;
 }
 
@@ -387,7 +388,6 @@
 
   &::after {
     content: '';
-    display: block;
     width: 90px;
     height: 2px;
     position: absolute;
