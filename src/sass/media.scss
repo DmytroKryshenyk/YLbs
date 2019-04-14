@@ -5,7 +5,6 @@
 
   // HEADER
   .header {
-    height: 1080px;
     margin-bottom: 125px;
   }
 
@@ -29,8 +28,7 @@
   }
 
   .header_description {
-    max-width: 1058px;
-    margin: 234px auto 0 auto;
+    padding: 0 70px;
   }
 
   .header_icon {
@@ -40,7 +38,7 @@
   }
 
   .header_title {
-    font: bold 87px $main-font;
+    font: bold 73px $main-font;
     margin-bottom: 120px;
   }
 
@@ -86,7 +84,8 @@
   .solution_video {
     flex-basis: 55.24%;
     width: 55%;
-    transform: translate(140px, 165px);
+    padding-top: 140px; //зроблено через padding, а не через translateY або top для того, щоб при дуже широких екранах і малій клькості бокового контенту відео не виходило за межі свого контенеру по висоті, а просто його розтягувало
+    transform: translateX(165px);
   }
 
   // GOALS OPINION
@@ -179,14 +178,15 @@
   }
 
   .contacts {
-    padding: 100px 0;
+    padding-bottom: 0;
+    display: flex;
+    align-content: center;
     background: linear-gradient(147deg, $gradient-color-first, $gradient-color-second);
   }
 
   .contacts_content {
     @include container-width-desktop;
     @include reset-paddings('hor');
-    margin: 0 auto;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -219,28 +219,21 @@
   }
 
   .projects_item {
-    flex: 1 0 auto;
-
     &:nth-child(odd) .projects_description {
-      padding-right: 5.2vw;
+      padding-right: 100px;
     }
 
     &:nth-child(even) .projects_description {
       text-align: left;
-      padding-left: 5.2vw;
+      padding-left: 100px;
     }
-  }
-
-  .projects_link {
-    height: 36.09375vw;
-    max-height: 693px;
   }
 
   .projects_description {
     @include reset-paddings('hor');
     justify-content: flex-end;
     text-align: right;
-    padding-bottom: 100px;
+    padding-bottom: 9.3vh;
   }
 
   .projects_pointers {
@@ -249,6 +242,21 @@
   }
 
   .projects_names {
-    font: bold 56px $main-font;
+    font: bold 52px $main-font;
+  }
+}
+
+
+@media (min-width: 960px) and (max-width: 1200px) {
+  .suggestion_title {
+    font: 500 32px/1.23 $main-font;
+  }
+
+  .suggestion_promise {
+    font: 300 16px $main-font;
+  }
+
+  .contacts_link {
+    font: 500 20px $main-font;
   }
 }
